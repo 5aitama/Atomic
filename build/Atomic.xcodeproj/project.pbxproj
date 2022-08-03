@@ -1,0 +1,1775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		73E656A3F63648599AADAFE3 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 47EBC504B1704E288477183C /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				6D9E3264B6754B199D30E4CE /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		80A9CD4EE3DE4CC8B79C49F5 /* UPDATE_SUBMODULES */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D7CF7E57C3664B459CC9799D /* Build configuration list for PBXAggregateTarget "UPDATE_SUBMODULES" */;
+			buildPhases = (
+				E3C81C7194E3B9607AF03813 /* Generate CMakeFiles/UPDATE_SUBMODULES */,
+			);
+			dependencies = (
+				E7BA4FE3274442D881B45E28 /* PBXTargetDependency */,
+			);
+			name = UPDATE_SUBMODULES;
+			productName = UPDATE_SUBMODULES;
+		};
+		82B01037B3984300A535D30E /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 601DDB9C4D5842AEB5F5B4AA /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				1034360FB63F53B3F7E9F7DA /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				267E8AF283694DB0A31BB68A /* PBXTargetDependency */,
+				712D156CF3A749F0B9B3B7D5 /* PBXTargetDependency */,
+				DA9DE86ECE774023822194FA /* PBXTargetDependency */,
+				639A00493799440AA8CD5428 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		C93DC24ACD0D4280891665B6 /* update_mappings */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E4E76CC9902348F69BE32972 /* Build configuration list for PBXAggregateTarget "update_mappings" */;
+			buildPhases = (
+				137074B78BB1FC255ECFA0A8 /* Generate modules/glfw/src/CMakeFiles/update_mappings */,
+			);
+			dependencies = (
+			);
+			name = update_mappings;
+			productName = update_mappings;
+		};
+		E875A67556454E3E970EC0AF /* uninstall */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 303805D4C4054EF38A7AEC02 /* Build configuration list for PBXAggregateTarget "uninstall" */;
+			buildPhases = (
+				0A8A051C9058E657863728E9 /* Generate modules/glfw/CMakeFiles/uninstall */,
+			);
+			dependencies = (
+			);
+			name = uninstall;
+			productName = uninstall;
+		};
+		FE728BC896F7415F93ED5992 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F5CC135F0F1D449385EDF45E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				3614B0B470EFD0AEC2A86E1E /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0E9FC991AA7D4D038A292D48 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.c */ = {isa = PBXBuildFile; fileRef = 5F27040B4DCC4E9D88A95560 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.c */; };
+		12B3D60699A1471783F5A3E7 /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.c */ = {isa = PBXBuildFile; fileRef = 5F33F206BA9C4349BDD16E9D /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.c */; };
+		13D97B390FE14F859887AD0A /* /Users/alex/Desktop/Atomic/modules/glfw/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 080203E99AE14A34AAF4689A /* /Users/alex/Desktop/Atomic/modules/glfw/src/CMakeLists.txt */; };
+		1C6F99B2DDE8462796C64400 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.m */ = {isa = PBXBuildFile; fileRef = BE766E35C73A43689E22643D /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.m */; };
+		1E38019D72E545AD8B5CA6C3 /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.h */ = {isa = PBXBuildFile; fileRef = 2ECF92E052534770B4CB949C /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.h */; };
+		244B470FA48B4A41B9678204 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_platform.h */ = {isa = PBXBuildFile; fileRef = B5A50C9464E440B6800FCDD7 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_platform.h */; };
+		25DE74ADA4374BE2AEEC99B6 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.h */ = {isa = PBXBuildFile; fileRef = 5BBF45192DEB44618B14B0F0 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.h */; };
+		298EA833D8BF4568B77DFF2C /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.h */ = {isa = PBXBuildFile; fileRef = 05C79AB768FC4D7289926AE4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.h */; };
+		39A7F8C63A084B1EB10B913F /* /Users/alex/Desktop/Atomic/Atomic/Atomic.h */ = {isa = PBXBuildFile; fileRef = EED4C1258C0D4B32B0E3F409 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.h */; };
+		41BC1203DE9249058F230F4D /* /Users/alex/Desktop/Atomic/modules/glfw/src/mappings.h */ = {isa = PBXBuildFile; fileRef = 99C98AE2A3194CDA8EEE68F4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/mappings.h */; };
+		435E34CEE9C846D48D137B24 /* /Users/alex/Desktop/Atomic/modules/glfw/src/input.c */ = {isa = PBXBuildFile; fileRef = 3F8FEBC847E74943AE3AC6FA /* /Users/alex/Desktop/Atomic/modules/glfw/src/input.c */; };
+		4FDC726209B547F48B959BE9 /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3native.h */ = {isa = PBXBuildFile; fileRef = C2E8EA92A104428AB6387051 /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3native.h */; };
+		61FE310D36FA4B319F400AA3 /* /Users/alex/Desktop/Atomic/modules/glfw/src/monitor.c */ = {isa = PBXBuildFile; fileRef = 7529333CBD8E4D17A2E08C3D /* /Users/alex/Desktop/Atomic/modules/glfw/src/monitor.c */; };
+		648D68C94AE046D1BFE3E4B1 /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.h */ = {isa = PBXBuildFile; fileRef = 8CF7B3E51F59481091561938 /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.h */; };
+		6B900418286540A7821C2945 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_init.m */ = {isa = PBXBuildFile; fileRef = 45B34388BAE1477E9F81435A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_init.m */; };
+		6C620B1813EA4F248B91FDDA /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.h */ = {isa = PBXBuildFile; fileRef = 290904D9CC60422AA0333BCC /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.h */; };
+		7487DC5D53C141E9A552D861 /* /Users/alex/Desktop/Atomic/Atomic/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 84401A8A5E124F8AB889A35F /* /Users/alex/Desktop/Atomic/Atomic/CMakeLists.txt */; };
+		789F967791AD420AB67B862D /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.h */ = {isa = PBXBuildFile; fileRef = 596F6A82DFD547BAA8819061 /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.h */; };
+		7D794C5181D040FB989A454A /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.c */ = {isa = PBXBuildFile; fileRef = 2A10690791D844E1B8AA0032 /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.c */; };
+		7F1C2A11EC4242928C22EB1E /* /Users/alex/Desktop/Atomic/modules/glfw/src/vulkan.c */ = {isa = PBXBuildFile; fileRef = FD8D48FCCA8C42769F177069 /* /Users/alex/Desktop/Atomic/modules/glfw/src/vulkan.c */; };
+		89D64528A21746719298DEA9 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.h */ = {isa = PBXBuildFile; fileRef = E72FFBC71C6E4CEE90307DB2 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.h */; };
+		8BA97E9670D249A5B1F891A2 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.c */ = {isa = PBXBuildFile; fileRef = 4161B05C6F8943E899AB7999 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.c */; };
+		9A98D13078B14E0B80994573 /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.c */ = {isa = PBXBuildFile; fileRef = 4ED42A57FD9E46C8AB3256C0 /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.c */; };
+		9FD3CA5DC7E4490392CAE26B /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3.h */ = {isa = PBXBuildFile; fileRef = 929338C217B640DDBD2A8BAB /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3.h */; };
+		B112E3C878D14239AC74A33C /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.m */ = {isa = PBXBuildFile; fileRef = 7761DB1F851B4FB980911E10 /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.m */; };
+		B3081EA286FF4F26BE671D3C /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_time.c */ = {isa = PBXBuildFile; fileRef = 9413D05762EA411DA09CF179 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_time.c */; };
+		B5B6CED947154FC3B3A8B21D /* /Users/alex/Desktop/Atomic/modules/glfw/src/internal.h */ = {isa = PBXBuildFile; fileRef = 06BFE1BB102D4B1998A3275C /* /Users/alex/Desktop/Atomic/modules/glfw/src/internal.h */; };
+		BD7F299EBD9A4B19B92448B6 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_monitor.m */ = {isa = PBXBuildFile; fileRef = 593C991D37924976AA204DC2 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_monitor.m */; };
+		C78E8DB9AB1941C18192927C /* /Users/alex/Desktop/Atomic/modules/glfw/src/init.c */ = {isa = PBXBuildFile; fileRef = FE55BF72505F413A8B2FB034 /* /Users/alex/Desktop/Atomic/modules/glfw/src/init.c */; };
+		CDAC2D9516EC42BEA6DD17A4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.c */ = {isa = PBXBuildFile; fileRef = A78DEA58D6BA49F2BAFA2C95 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.c */; };
+		EDB0658729C846C289EBDDDD /* /Users/alex/Desktop/Atomic/modules/glfw/src/window.c */ = {isa = PBXBuildFile; fileRef = 023E9FDABF33403AB34D5692 /* /Users/alex/Desktop/Atomic/modules/glfw/src/window.c */; };
+		EEF3CDB85B444F8CAE49A36C /* /Users/alex/Desktop/Atomic/modules/glfw/src/context.c */ = {isa = PBXBuildFile; fileRef = 4E747661A74E4A28A3278B54 /* /Users/alex/Desktop/Atomic/modules/glfw/src/context.c */; };
+		F09A3A1587234F3E85709663 /* /Users/alex/Desktop/Atomic/build/modules/glfw/src/glfw_config.h */ = {isa = PBXBuildFile; fileRef = 86D7B1C96BB74527B41BDFEA /* /Users/alex/Desktop/Atomic/build/modules/glfw/src/glfw_config.h */; };
+		FF883BEBD04F4BFFB446950A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_window.m */ = {isa = PBXBuildFile; fileRef = 30B4B38C052340538A83500A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_window.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		45FE39AE371E4AA9B77BB1A9 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		4C6F60E9037C430DBA0DA80F /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		9A070615C5D8401D9CF60BAE /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		E53DCAFD89AB430CB3C2AB10 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		0095F9EC69494100B8FCD5BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E783F7B444AB086026B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A961AB39ABD48839F0A8D7D;
+			remoteInfo = glfw;
+		};
+		2B1B912AA22C4248BF8C671D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E783F7B444AB086026B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E3AC55A9E724447A894A6F5;
+			remoteInfo = Atomic;
+		};
+		438FA4A6E06E465F92A5D196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E783F7B444AB086026B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A961AB39ABD48839F0A8D7D;
+			remoteInfo = glfw;
+		};
+		47E1260DBD024E7085F3EB0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E783F7B444AB086026B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE728BC896F7415F93ED5992;
+			remoteInfo = ZERO_CHECK;
+		};
+		608237767AE544C9B7D40E5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E783F7B444AB086026B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80A9CD4EE3DE4CC8B79C49F5;
+			remoteInfo = UPDATE_SUBMODULES;
+		};
+		78C09D54E422481BA125CF7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E783F7B444AB086026B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE728BC896F7415F93ED5992;
+			remoteInfo = ZERO_CHECK;
+		};
+		8B4F4BB207DD48419C3AEE84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E783F7B444AB086026B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82B01037B3984300A535D30E;
+			remoteInfo = ALL_BUILD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		023E9FDABF33403AB34D5692 /* /Users/alex/Desktop/Atomic/modules/glfw/src/window.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = window.c; path = modules/glfw/src/window.c; sourceTree = SOURCE_ROOT; };
+		05C79AB768FC4D7289926AE4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = egl_context.h; path = modules/glfw/src/egl_context.h; sourceTree = SOURCE_ROOT; };
+		06BFE1BB102D4B1998A3275C /* /Users/alex/Desktop/Atomic/modules/glfw/src/internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = internal.h; path = modules/glfw/src/internal.h; sourceTree = SOURCE_ROOT; };
+		080203E99AE14A34AAF4689A /* /Users/alex/Desktop/Atomic/modules/glfw/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = modules/glfw/src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		124D6DD77A6946EE8BC04790 /* /Users/alex/Desktop/Atomic/modules/glfw/src/mappings.h.in */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = mappings.h.in; path = modules/glfw/src/mappings.h.in; sourceTree = SOURCE_ROOT; };
+		290904D9CC60422AA0333BCC /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = renderer.h; path = Atomic/renderer/renderer.h; sourceTree = SOURCE_ROOT; };
+		2A10690791D844E1B8AA0032 /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = posix_thread.c; path = modules/glfw/src/posix_thread.c; sourceTree = SOURCE_ROOT; };
+		2ECF92E052534770B4CB949C /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = surface.h; path = Atomic/surface/surface.h; sourceTree = SOURCE_ROOT; };
+		30B4B38C052340538A83500A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_window.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_window.m; path = modules/glfw/src/cocoa_window.m; sourceTree = SOURCE_ROOT; };
+		3D6B0A18EF954C10B1FE9769 /* Atomic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Atomic; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F8FEBC847E74943AE3AC6FA /* /Users/alex/Desktop/Atomic/modules/glfw/src/input.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = input.c; path = modules/glfw/src/input.c; sourceTree = SOURCE_ROOT; };
+		4161B05C6F8943E899AB7999 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = Atomic.c; path = Atomic/Atomic.c; sourceTree = SOURCE_ROOT; };
+		45B34388BAE1477E9F81435A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_init.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_init.m; path = modules/glfw/src/cocoa_init.m; sourceTree = SOURCE_ROOT; };
+		4E747661A74E4A28A3278B54 /* /Users/alex/Desktop/Atomic/modules/glfw/src/context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = context.c; path = modules/glfw/src/context.c; sourceTree = SOURCE_ROOT; };
+		4ED42A57FD9E46C8AB3256C0 /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = surface.c; path = Atomic/surface/surface.c; sourceTree = SOURCE_ROOT; };
+		4F08ACF5071044B29EE1CF88 /* /Users/alex/Desktop/Atomic/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		593C991D37924976AA204DC2 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_monitor.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_monitor.m; path = modules/glfw/src/cocoa_monitor.m; sourceTree = SOURCE_ROOT; };
+		596F6A82DFD547BAA8819061 /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nsgl_context.h; path = modules/glfw/src/nsgl_context.h; sourceTree = SOURCE_ROOT; };
+		5BBF45192DEB44618B14B0F0 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cocoa_joystick.h; path = modules/glfw/src/cocoa_joystick.h; sourceTree = SOURCE_ROOT; };
+		5F27040B4DCC4E9D88A95560 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = egl_context.c; path = modules/glfw/src/egl_context.c; sourceTree = SOURCE_ROOT; };
+		5F33F206BA9C4349BDD16E9D /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer.c; path = Atomic/renderer/renderer.c; sourceTree = SOURCE_ROOT; };
+		60DC970C7625433C8A0F1BE9 /* /Users/alex/Desktop/Atomic/modules/glfw/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = modules/glfw/src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		7529333CBD8E4D17A2E08C3D /* /Users/alex/Desktop/Atomic/modules/glfw/src/monitor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = monitor.c; path = modules/glfw/src/monitor.c; sourceTree = SOURCE_ROOT; };
+		7761DB1F851B4FB980911E10 /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = nsgl_context.m; path = modules/glfw/src/nsgl_context.m; sourceTree = SOURCE_ROOT; };
+		84401A8A5E124F8AB889A35F /* /Users/alex/Desktop/Atomic/Atomic/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = Atomic/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		86D7B1C96BB74527B41BDFEA /* /Users/alex/Desktop/Atomic/build/modules/glfw/src/glfw_config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw_config.h; path = build/modules/glfw/src/glfw_config.h; sourceTree = SOURCE_ROOT; };
+		8CF7B3E51F59481091561938 /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = posix_thread.h; path = modules/glfw/src/posix_thread.h; sourceTree = SOURCE_ROOT; };
+		929338C217B640DDBD2A8BAB /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3.h; path = modules/glfw/include/GLFW/glfw3.h; sourceTree = SOURCE_ROOT; };
+		9413D05762EA411DA09CF179 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_time.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = cocoa_time.c; path = modules/glfw/src/cocoa_time.c; sourceTree = SOURCE_ROOT; };
+		9841B068F966488AAD106B5B /* /Users/alex/Desktop/Atomic/modules/glfw/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = modules/glfw/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		99C98AE2A3194CDA8EEE68F4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/mappings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = mappings.h; path = modules/glfw/src/mappings.h; sourceTree = SOURCE_ROOT; };
+		A78DEA58D6BA49F2BAFA2C95 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = osmesa_context.c; path = modules/glfw/src/osmesa_context.c; sourceTree = SOURCE_ROOT; };
+		B5A50C9464E440B6800FCDD7 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cocoa_platform.h; path = modules/glfw/src/cocoa_platform.h; sourceTree = SOURCE_ROOT; };
+		B9753B74B6454E5B9E338707 /* glfw */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglfw3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE766E35C73A43689E22643D /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_joystick.m; path = modules/glfw/src/cocoa_joystick.m; sourceTree = SOURCE_ROOT; };
+		C2E8EA92A104428AB6387051 /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3native.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3native.h; path = modules/glfw/include/GLFW/glfw3native.h; sourceTree = SOURCE_ROOT; };
+		C3ACB12A19D14FD3B32DA5A7 /* /Users/alex/Desktop/Atomic/modules/glfw/CMake/GenerateMappings.cmake */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = GenerateMappings.cmake; path = modules/glfw/CMake/GenerateMappings.cmake; sourceTree = SOURCE_ROOT; };
+		D399F37F0DD642298980EA2F /* /Users/alex/Desktop/Atomic/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E72FFBC71C6E4CEE90307DB2 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = osmesa_context.h; path = modules/glfw/src/osmesa_context.h; sourceTree = SOURCE_ROOT; };
+		EED4C1258C0D4B32B0E3F409 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Atomic.h; path = Atomic/Atomic.h; sourceTree = SOURCE_ROOT; };
+		FD8D48FCCA8C42769F177069 /* /Users/alex/Desktop/Atomic/modules/glfw/src/vulkan.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = vulkan.c; path = modules/glfw/src/vulkan.c; sourceTree = SOURCE_ROOT; };
+		FE55BF72505F413A8B2FB034 /* /Users/alex/Desktop/Atomic/modules/glfw/src/init.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = init.c; path = modules/glfw/src/init.c; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20A9D1B93B7C46D0815A0278 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C77DBBBBDD741DB82732C8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13D0F092984F48B28657620C /* uninstall */ = {
+			isa = PBXGroup;
+			children = (
+				C357E9D6C6D14E1DB4584501 /* CMake Rules */,
+				9841B068F966488AAD106B5B /* /Users/alex/Desktop/Atomic/modules/glfw/CMakeLists.txt */,
+			);
+			name = uninstall;
+			sourceTree = "<group>";
+		};
+		2B670D6EBBE949CD91F583A0 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				45B34388BAE1477E9F81435A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_init.m */,
+				BE766E35C73A43689E22643D /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.m */,
+				593C991D37924976AA204DC2 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_monitor.m */,
+				9413D05762EA411DA09CF179 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_time.c */,
+				30B4B38C052340538A83500A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_window.m */,
+				4E747661A74E4A28A3278B54 /* /Users/alex/Desktop/Atomic/modules/glfw/src/context.c */,
+				5F27040B4DCC4E9D88A95560 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.c */,
+				FE55BF72505F413A8B2FB034 /* /Users/alex/Desktop/Atomic/modules/glfw/src/init.c */,
+				3F8FEBC847E74943AE3AC6FA /* /Users/alex/Desktop/Atomic/modules/glfw/src/input.c */,
+				7529333CBD8E4D17A2E08C3D /* /Users/alex/Desktop/Atomic/modules/glfw/src/monitor.c */,
+				7761DB1F851B4FB980911E10 /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.m */,
+				A78DEA58D6BA49F2BAFA2C95 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.c */,
+				2A10690791D844E1B8AA0032 /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.c */,
+				FD8D48FCCA8C42769F177069 /* /Users/alex/Desktop/Atomic/modules/glfw/src/vulkan.c */,
+				023E9FDABF33403AB34D5692 /* /Users/alex/Desktop/Atomic/modules/glfw/src/window.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2C172926DF6C47E19E6D8603 /* Atomic */ = {
+			isa = PBXGroup;
+			children = (
+				D03287ECB40343B0AD56DB0A /* Source Files */,
+				F3A07559EC984505B5EBAA61 /* Header Files */,
+				84401A8A5E124F8AB889A35F /* /Users/alex/Desktop/Atomic/Atomic/CMakeLists.txt */,
+			);
+			name = Atomic;
+			sourceTree = "<group>";
+		};
+		2E09C284591F4465903EC916 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		311370E4094B448C8DD82C62 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				124D6DD77A6946EE8BC04790 /* /Users/alex/Desktop/Atomic/modules/glfw/src/mappings.h.in */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		346C0D6AF3F84AE288ABA703 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				F7EC88929E774373A5C1B8FB /* CMake Rules */,
+				4F08ACF5071044B29EE1CF88 /* /Users/alex/Desktop/Atomic/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		5D69501346F44D999C9A6C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E1B0540D08C42919338E89A = {
+			isa = PBXGroup;
+			children = (
+				FC8665AEFB83451C835DEF5E /* UPDATE_SUBMODULES */,
+				346C0D6AF3F84AE288ABA703 /* ALL_BUILD */,
+				947AC37E27FC4790B87B6C4D /* GLFW3 */,
+				2C172926DF6C47E19E6D8603 /* Atomic */,
+				DBA4BBD122EF45A58864350C /* Products */,
+				5D69501346F44D999C9A6C8A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		947AC37E27FC4790B87B6C4D /* GLFW3 */ = {
+			isa = PBXGroup;
+			children = (
+				13D0F092984F48B28657620C /* uninstall */,
+				C6F41EF3EAE3474880A2201F /* update_mappings */,
+				CEB1C69BD56743A7BC1312FD /* glfw */,
+			);
+			name = GLFW3;
+			sourceTree = "<group>";
+		};
+		AA31CC70E34440ADBE38DE66 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				86D7B1C96BB74527B41BDFEA /* /Users/alex/Desktop/Atomic/build/modules/glfw/src/glfw_config.h */,
+				929338C217B640DDBD2A8BAB /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3.h */,
+				C2E8EA92A104428AB6387051 /* /Users/alex/Desktop/Atomic/modules/glfw/include/GLFW/glfw3native.h */,
+				5BBF45192DEB44618B14B0F0 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.h */,
+				B5A50C9464E440B6800FCDD7 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_platform.h */,
+				05C79AB768FC4D7289926AE4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.h */,
+				06BFE1BB102D4B1998A3275C /* /Users/alex/Desktop/Atomic/modules/glfw/src/internal.h */,
+				99C98AE2A3194CDA8EEE68F4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/mappings.h */,
+				596F6A82DFD547BAA8819061 /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.h */,
+				E72FFBC71C6E4CEE90307DB2 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.h */,
+				8CF7B3E51F59481091561938 /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		C357E9D6C6D14E1DB4584501 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		C6F41EF3EAE3474880A2201F /* update_mappings */ = {
+			isa = PBXGroup;
+			children = (
+				311370E4094B448C8DD82C62 /* Header Files */,
+				2E09C284591F4465903EC916 /* CMake Rules */,
+				C3ACB12A19D14FD3B32DA5A7 /* /Users/alex/Desktop/Atomic/modules/glfw/CMake/GenerateMappings.cmake */,
+				60DC970C7625433C8A0F1BE9 /* /Users/alex/Desktop/Atomic/modules/glfw/src/CMakeLists.txt */,
+			);
+			name = update_mappings;
+			sourceTree = "<group>";
+		};
+		CEB1C69BD56743A7BC1312FD /* glfw */ = {
+			isa = PBXGroup;
+			children = (
+				2B670D6EBBE949CD91F583A0 /* Source Files */,
+				AA31CC70E34440ADBE38DE66 /* Header Files */,
+				080203E99AE14A34AAF4689A /* /Users/alex/Desktop/Atomic/modules/glfw/src/CMakeLists.txt */,
+			);
+			name = glfw;
+			sourceTree = "<group>";
+		};
+		D03287ECB40343B0AD56DB0A /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				4161B05C6F8943E899AB7999 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.c */,
+				5F33F206BA9C4349BDD16E9D /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.c */,
+				4ED42A57FD9E46C8AB3256C0 /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		D12D4EDB461149BEB4F67EF8 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		DBA4BBD122EF45A58864350C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D6B0A18EF954C10B1FE9769 /* Atomic */,
+				B9753B74B6454E5B9E338707 /* glfw */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3A07559EC984505B5EBAA61 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED4C1258C0D4B32B0E3F409 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.h */,
+				290904D9CC60422AA0333BCC /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.h */,
+				2ECF92E052534770B4CB949C /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		F7EC88929E774373A5C1B8FB /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		FC8665AEFB83451C835DEF5E /* UPDATE_SUBMODULES */ = {
+			isa = PBXGroup;
+			children = (
+				D12D4EDB461149BEB4F67EF8 /* CMake Rules */,
+				D399F37F0DD642298980EA2F /* /Users/alex/Desktop/Atomic/CMakeLists.txt */,
+			);
+			name = UPDATE_SUBMODULES;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E3AC55A9E724447A894A6F5 /* Atomic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA0037B5FB0448228C8FB507 /* Build configuration list for PBXNativeTarget "Atomic" */;
+			buildPhases = (
+				6ABB9BF755944847A77024FE /* Sources */,
+				4C77DBBBBDD741DB82732C8D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF5027FF620B49E8859A4B0E /* PBXTargetDependency */,
+			);
+			name = Atomic;
+			productName = Atomic;
+			productReference = 3D6B0A18EF954C10B1FE9769 /* Atomic */;
+			productType = "com.apple.product-type.tool";
+		};
+		3A961AB39ABD48839F0A8D7D /* glfw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA4F0DCF9AC447C49880E3DD /* Build configuration list for PBXNativeTarget "glfw" */;
+			buildPhases = (
+				A2DA77D2BB504BB3A46DE2F1 /* Sources */,
+				20A9D1B93B7C46D0815A0278 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glfw;
+			productName = glfw;
+			productReference = B9753B74B6454E5B9E338707 /* glfw */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B54E783F7B444AB086026B82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1340;
+			};
+			buildConfigurationList = CF29E72BEC8945F480CFEB0A /* Build configuration list for PBXProject "Atomic" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				4C6F60E9037C430DBA0DA80F /* Debug */,
+				45FE39AE371E4AA9B77BB1A9 /* Release */,
+				E53DCAFD89AB430CB3C2AB10 /* MinSizeRel */,
+				9A070615C5D8401D9CF60BAE /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 7E1B0540D08C42919338E89A;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				82B01037B3984300A535D30E /* ALL_BUILD */,
+				0E3AC55A9E724447A894A6F5 /* Atomic */,
+				80A9CD4EE3DE4CC8B79C49F5 /* UPDATE_SUBMODULES */,
+				FE728BC896F7415F93ED5992 /* ZERO_CHECK */,
+				3A961AB39ABD48839F0A8D7D /* glfw */,
+				73E656A3F63648599AADAFE3 /* install */,
+				E875A67556454E3E970EC0AF /* uninstall */,
+				C93DC24ACD0D4280891665B6 /* update_mappings */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A8A051C9058E657863728E9 /* Generate modules/glfw/CMakeFiles/uninstall */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate modules/glfw/CMakeFiles/uninstall";
+			outputPaths = (
+/Users/alex/Desktop/Atomic/build/modules/glfw/CMakeFiles/uninstall			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alex/Desktop/Atomic/build/modules/glfw
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/build/modules/glfw/cmake_uninstall.cmake
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alex/Desktop/Atomic/build/modules/glfw
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/build/modules/glfw/cmake_uninstall.cmake
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alex/Desktop/Atomic/build/modules/glfw
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/build/modules/glfw/cmake_uninstall.cmake
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alex/Desktop/Atomic/build/modules/glfw
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/build/modules/glfw/cmake_uninstall.cmake
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		1034360FB63F53B3F7E9F7DA /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+/Users/alex/Desktop/Atomic/build/CMakeFiles/ALL_BUILD			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		137074B78BB1FC255ECFA0A8 /* Generate modules/glfw/src/CMakeFiles/update_mappings */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate modules/glfw/src/CMakeFiles/update_mappings";
+			outputPaths = (
+/Users/alex/Desktop/Atomic/build/modules/glfw/src/CMakeFiles/update_mappings			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/glfw/src
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/modules/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/glfw/src
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/modules/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/glfw/src
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/modules/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/glfw/src
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/modules/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3614B0B470EFD0AEC2A86E1E /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Users/alex/Desktop/Atomic/build/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  make -f /Users/alex/Desktop/Atomic/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  make -f /Users/alex/Desktop/Atomic/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  make -f /Users/alex/Desktop/Atomic/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  make -f /Users/alex/Desktop/Atomic/build/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		3C8B9B9628600475EB03CBF8 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		87AF4882E018677E2624B544 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		93426DA6A4AC2C2AC9CE883C /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alex/Desktop/Atomic/build
+  /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DBUILD_TYPE=$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P cmake_install.cmake
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		E26288163E2B081AE687BB8A = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		E3C81C7194E3B9607AF03813 /* Generate CMakeFiles/UPDATE_SUBMODULES */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/UPDATE_SUBMODULES";
+			outputPaths = (
+/Users/alex/Desktop/Atomic/build/CMakeFiles/UPDATE_SUBMODULES			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/wgpu
+  git submodule update --init --recursive
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/wgpu
+  git submodule update --init --recursive
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/wgpu
+  git submodule update --init --recursive
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/alex/Desktop/Atomic/modules/wgpu
+  git submodule update --init --recursive
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		EF220574C043FA76D2683574 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6ABB9BF755944847A77024FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BA97E9670D249A5B1F891A2 /* /Users/alex/Desktop/Atomic/Atomic/Atomic.c */,
+				12B3D60699A1471783F5A3E7 /* /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.c */,
+				9A98D13078B14E0B80994573 /* /Users/alex/Desktop/Atomic/Atomic/surface/surface.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2DA77D2BB504BB3A46DE2F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B900418286540A7821C2945 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_init.m */,
+				1C6F99B2DDE8462796C64400 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.m */,
+				BD7F299EBD9A4B19B92448B6 /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_monitor.m */,
+				B3081EA286FF4F26BE671D3C /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_time.c */,
+				FF883BEBD04F4BFFB446950A /* /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_window.m */,
+				EEF3CDB85B444F8CAE49A36C /* /Users/alex/Desktop/Atomic/modules/glfw/src/context.c */,
+				0E9FC991AA7D4D038A292D48 /* /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.c */,
+				C78E8DB9AB1941C18192927C /* /Users/alex/Desktop/Atomic/modules/glfw/src/init.c */,
+				435E34CEE9C846D48D137B24 /* /Users/alex/Desktop/Atomic/modules/glfw/src/input.c */,
+				61FE310D36FA4B319F400AA3 /* /Users/alex/Desktop/Atomic/modules/glfw/src/monitor.c */,
+				B112E3C878D14239AC74A33C /* /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.m */,
+				CDAC2D9516EC42BEA6DD17A4 /* /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.c */,
+				7D794C5181D040FB989A454A /* /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.c */,
+				7F1C2A11EC4242928C22EB1E /* /Users/alex/Desktop/Atomic/modules/glfw/src/vulkan.c */,
+				EDB0658729C846C289EBDDDD /* /Users/alex/Desktop/Atomic/modules/glfw/src/window.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		267E8AF283694DB0A31BB68A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80A9CD4EE3DE4CC8B79C49F5 /* UPDATE_SUBMODULES */;
+			targetProxy = 608237767AE544C9B7D40E5A /* PBXContainerItemProxy */;
+		};
+		639A00493799440AA8CD5428 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E3AC55A9E724447A894A6F5 /* Atomic */;
+			targetProxy = 2B1B912AA22C4248BF8C671D /* PBXContainerItemProxy */;
+		};
+		6D9E3264B6754B199D30E4CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82B01037B3984300A535D30E /* ALL_BUILD */;
+			targetProxy = 8B4F4BB207DD48419C3AEE84 /* PBXContainerItemProxy */;
+		};
+		712D156CF3A749F0B9B3B7D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A961AB39ABD48839F0A8D7D /* glfw */;
+			targetProxy = 438FA4A6E06E465F92A5D196 /* PBXContainerItemProxy */;
+		};
+		AF5027FF620B49E8859A4B0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A961AB39ABD48839F0A8D7D /* glfw */;
+			targetProxy = 0095F9EC69494100B8FCD5BE /* PBXContainerItemProxy */;
+		};
+		DA9DE86ECE774023822194FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE728BC896F7415F93ED5992 /* ZERO_CHECK */;
+			targetProxy = 47E1260DBD024E7085F3EB0F /* PBXContainerItemProxy */;
+		};
+		E7BA4FE3274442D881B45E28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE728BC896F7415F93ED5992 /* ZERO_CHECK */;
+			targetProxy = 78C09D54E422481BA125CF7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02A4F690BD6C45CF8F041BF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		06632DE50C394F28B78BDF6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/modules/glfw/include,/Users/alex/Desktop/Atomic/modules/glfw/src,/Users/alex/Desktop/Atomic/build/modules/glfw/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG -fPIC -Wall '-std=gnu99' ","$(inherited)");
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		0A141E3781BB48DC8F625413 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = update_mappings;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		11473E1342FA47858089ABBB /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		13CAD50C3E174780BCAE0C59 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/modules/glfw/include,/Users/alex/Desktop/Atomic/modules/glfw/src,/Users/alex/Desktop/Atomic/build/modules/glfw/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG -fPIC -Wall '-std=gnu99' ","$(inherited)");
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		19C5D504DB284B488B678DF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		1ADEA8E5BB784074B61FC603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = UPDATE_SUBMODULES;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		225363C692B04851B80791AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		2A404588FED041DDA4FA9725 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = update_mappings;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		32A252AD59914716948DF586 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'WGPU_TARGET=WGPU_TARGET_MACOS'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi,/Users/alex/Desktop/Atomic/modules/glfw/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG -x 'objective-c++' '-Wno-error=address-of-temporary' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Users/alex/Desktop/Atomic/build/modules/glfw/src/Release/libglfw3.a,"-framework Cocoa","-framework CoreVideo","-framework IOKit","-framework QuartzCore","-framework Metal",/Users/alex/Desktop/Atomic/build/modules/glfw/src/Release/libglfw3.a,/Users/alex/Desktop/Atomic/modules/wgpu/target/debug/libwgpu_native.a,"-framework Cocoa","-framework IOKit","-framework CoreFoundation","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Atomic;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/Atomic;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		3A2AE6907A094817A08C480A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		46ED62CF65CA4CDC9B6940AC /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		4DE57DFF77CD4DBBA3A57F4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		4EAB1E7FE29D448DBE1E5514 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		7015844B1DA14618844D8654 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = UPDATE_SUBMODULES;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		7708AA88EE8B492DB2B41B29 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'WGPU_TARGET=WGPU_TARGET_MACOS'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi,/Users/alex/Desktop/Atomic/modules/glfw/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG -x 'objective-c++' '-Wno-error=address-of-temporary' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Users/alex/Desktop/Atomic/build/modules/glfw/src/MinSizeRel/libglfw3.a,"-framework Cocoa","-framework CoreVideo","-framework IOKit","-framework QuartzCore","-framework Metal",/Users/alex/Desktop/Atomic/build/modules/glfw/src/MinSizeRel/libglfw3.a,/Users/alex/Desktop/Atomic/modules/wgpu/target/debug/libwgpu_native.a,"-framework Cocoa","-framework IOKit","-framework CoreFoundation","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Atomic;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/Atomic;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		79D39F4B8CE04F0EB62B2D31 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
+				SYMROOT = /Users/alex/Desktop/Atomic/build/build;
+			};
+			name = MinSizeRel;
+		};
+		7F5CB90D2AAE4A879254637E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		87927E5EC61345489B0ABAD7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8922A13DAE7F401894B5494B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		93C0866116594C61AC74FA4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = update_mappings;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		9FA7E18672594DAA8C80C472 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/modules/glfw/include,/Users/alex/Desktop/Atomic/modules/glfw/src,/Users/alex/Desktop/Atomic/build/modules/glfw/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   -fPIC -Wall '-std=gnu99' ","$(inherited)");
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		A2A0955B1E814547AB1A2575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		A743B6FA3F514BFE92545B08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'WGPU_TARGET=WGPU_TARGET_MACOS'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi,/Users/alex/Desktop/Atomic/modules/glfw/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   -x 'objective-c++' '-Wno-error=address-of-temporary' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Users/alex/Desktop/Atomic/build/modules/glfw/src/Debug/libglfw3.a,"-framework Cocoa","-framework CoreVideo","-framework IOKit","-framework QuartzCore","-framework Metal",/Users/alex/Desktop/Atomic/build/modules/glfw/src/Debug/libglfw3.a,/Users/alex/Desktop/Atomic/modules/wgpu/target/debug/libwgpu_native.a,"-framework Cocoa","-framework IOKit","-framework CoreFoundation","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Atomic;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/Atomic;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		ABC62A2884F64764AB73C2EE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","'WGPU_TARGET=WGPU_TARGET_MACOS'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi,/Users/alex/Desktop/Atomic/modules/glfw/include,"$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG -x 'objective-c++' '-Wno-error=address-of-temporary' ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/Users/alex/Desktop/Atomic/build/modules/glfw/src/RelWithDebInfo/libglfw3.a,"-framework Cocoa","-framework CoreVideo","-framework IOKit","-framework QuartzCore","-framework Metal",/Users/alex/Desktop/Atomic/build/modules/glfw/src/RelWithDebInfo/libglfw3.a,/Users/alex/Desktop/Atomic/modules/wgpu/target/debug/libwgpu_native.a,"-framework Cocoa","-framework IOKit","-framework CoreFoundation","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Atomic;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/Atomic;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B5AF493B8DBB49EDAB8671F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
+				SYMROOT = /Users/alex/Desktop/Atomic/build/build;
+			};
+			name = Debug;
+		};
+		CB95A5F3DFDF4D8D90B29C10 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/alex/Desktop/Atomic/modules/glfw/include,/Users/alex/Desktop/Atomic/modules/glfw/src,/Users/alex/Desktop/Atomic/build/modules/glfw/src,"$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG -fPIC -Wall '-std=gnu99' ","$(inherited)");
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		CC6A6EED7BC74449BF3F3045 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = update_mappings;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build/modules/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D0951F11FA544F4CB1507BBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = UPDATE_SUBMODULES;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		D425EA8895A645868678C6F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
+				SYMROOT = /Users/alex/Desktop/Atomic/build/build;
+			};
+			name = Release;
+		};
+		E458EB146A1A40F19D15D492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		F1DF2FB325244228A20D15F1 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		F2C103FA01CF4F0A9C915E95 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F43028F98E8E4F198C6B1E9A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
+				SYMROOT = /Users/alex/Desktop/Atomic/build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		FB28E9D7C76C4DBFBC040317 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = UPDATE_SUBMODULES;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		FDE547DA2E8041E78632E7D5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alex/Desktop/Atomic/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		303805D4C4054EF38A7AEC02 /* Build configuration list for PBXAggregateTarget "uninstall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				225363C692B04851B80791AF /* Debug */,
+				A2A0955B1E814547AB1A2575 /* Release */,
+				11473E1342FA47858089ABBB /* MinSizeRel */,
+				87927E5EC61345489B0ABAD7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		47EBC504B1704E288477183C /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DE57DFF77CD4DBBA3A57F4B /* Debug */,
+				3A2AE6907A094817A08C480A /* Release */,
+				F1DF2FB325244228A20D15F1 /* MinSizeRel */,
+				46ED62CF65CA4CDC9B6940AC /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		601DDB9C4D5842AEB5F5B4AA /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C5D504DB284B488B678DF3 /* Debug */,
+				E458EB146A1A40F19D15D492 /* Release */,
+				8922A13DAE7F401894B5494B /* MinSizeRel */,
+				7F5CB90D2AAE4A879254637E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BA0037B5FB0448228C8FB507 /* Build configuration list for PBXNativeTarget "Atomic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A743B6FA3F514BFE92545B08 /* Debug */,
+				32A252AD59914716948DF586 /* Release */,
+				7708AA88EE8B492DB2B41B29 /* MinSizeRel */,
+				ABC62A2884F64764AB73C2EE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BA4F0DCF9AC447C49880E3DD /* Build configuration list for PBXNativeTarget "glfw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA7E18672594DAA8C80C472 /* Debug */,
+				06632DE50C394F28B78BDF6E /* Release */,
+				CB95A5F3DFDF4D8D90B29C10 /* MinSizeRel */,
+				13CAD50C3E174780BCAE0C59 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CF29E72BEC8945F480CFEB0A /* Build configuration list for PBXProject "Atomic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5AF493B8DBB49EDAB8671F2 /* Debug */,
+				D425EA8895A645868678C6F9 /* Release */,
+				79D39F4B8CE04F0EB62B2D31 /* MinSizeRel */,
+				F43028F98E8E4F198C6B1E9A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D7CF7E57C3664B459CC9799D /* Build configuration list for PBXAggregateTarget "UPDATE_SUBMODULES" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0951F11FA544F4CB1507BBA /* Debug */,
+				1ADEA8E5BB784074B61FC603 /* Release */,
+				7015844B1DA14618844D8654 /* MinSizeRel */,
+				FB28E9D7C76C4DBFBC040317 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E4E76CC9902348F69BE32972 /* Build configuration list for PBXAggregateTarget "update_mappings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A141E3781BB48DC8F625413 /* Debug */,
+				93C0866116594C61AC74FA4A /* Release */,
+				2A404588FED041DDA4FA9725 /* MinSizeRel */,
+				CC6A6EED7BC74449BF3F3045 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F5CC135F0F1D449385EDF45E /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A4F690BD6C45CF8F041BF2 /* Debug */,
+				4EAB1E7FE29D448DBE1E5514 /* Release */,
+				FDE547DA2E8041E78632E7D5 /* MinSizeRel */,
+				F2C103FA01CF4F0A9C915E95 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B54E783F7B444AB086026B82 /* Project object */;
+}

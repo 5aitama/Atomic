@@ -58,6 +58,7 @@ int init_surface(Surface* surface, void* metal_layer)
 		glfwTerminate();
 	}
 
+	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 	GLFWwindow* window = glfwCreateWindow((int)width, (int)height, title, NULL, NULL);
 
 	if (window == NULL) {
@@ -167,3 +168,11 @@ GLFWwindow* surface_get_glfw_window(Surface* surface) {
 	return (*surface)->window;
 }
 #endif
+
+void* surface_get_raw(Surface* surface) {
+	return (void*)((*surface)->surface);
+}
+
+void surface_get_size(Surface* surface, uint32_t* width, uint32_t* height) {
+	glfwGetWindowSize((*surface)->window, (int*)width, (int*)height);
+}

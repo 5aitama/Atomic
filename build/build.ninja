@@ -1,0 +1,679 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: Atomic
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/alex/Desktop/Atomic/build/
+
+#############################################
+# Utility command for UPDATE_SUBMODULES
+
+build UPDATE_SUBMODULES: phony CMakeFiles/UPDATE_SUBMODULES
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for CMakeFiles/UPDATE_SUBMODULES
+
+build CMakeFiles/UPDATE_SUBMODULES | ${cmake_ninja_workdir}CMakeFiles/UPDATE_SUBMODULES: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/modules/wgpu && git submodule update --init --recursive
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alex/Desktop/Atomic/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for uninstall
+
+build modules/glfw/uninstall: phony modules/glfw/CMakeFiles/uninstall
+
+
+#############################################
+# Utility command for edit_cache
+
+build modules/glfw/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build modules/glfw/edit_cache: phony modules/glfw/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build modules/glfw/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build modules/glfw/rebuild_cache: phony modules/glfw/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build modules/glfw/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build modules/glfw/CMakeFiles/install.util: CUSTOM_COMMAND modules/glfw/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build modules/glfw/install: phony modules/glfw/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build modules/glfw/CMakeFiles/install/local.util: CUSTOM_COMMAND modules/glfw/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build modules/glfw/install/local: phony modules/glfw/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build modules/glfw/CMakeFiles/install/strip.util: CUSTOM_COMMAND modules/glfw/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build modules/glfw/install/strip: phony modules/glfw/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for modules/glfw/CMakeFiles/uninstall
+
+build modules/glfw/CMakeFiles/uninstall | ${cmake_ninja_workdir}modules/glfw/CMakeFiles/uninstall: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/build/modules/glfw/cmake_uninstall.cmake
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alex/Desktop/Atomic/modules/glfw/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for update_mappings
+
+build modules/glfw/src/update_mappings: phony modules/glfw/src/CMakeFiles/update_mappings
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Order-only phony target for glfw
+
+build cmake_object_order_depends_target_glfw: phony || modules/glfw/src/CMakeFiles/glfw.dir
+
+build modules/glfw/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/context.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/init.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/input.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/input.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/monitor.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/window.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_init.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_window.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/cocoa_time.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/posix_thread.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/nsgl_context.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+build modules/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_Debug /Users/alex/Desktop/Atomic/modules/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = modules/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/alex/Desktop/Atomic/modules/glfw/include -I/Users/alex/Desktop/Atomic/modules/glfw/src -I/Users/alex/Desktop/Atomic/build/modules/glfw/src
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Link the static library modules/glfw/src/libglfw3.a
+
+build modules/glfw/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug modules/glfw/src/CMakeFiles/glfw.dir/context.c.o modules/glfw/src/CMakeFiles/glfw.dir/init.c.o modules/glfw/src/CMakeFiles/glfw.dir/input.c.o modules/glfw/src/CMakeFiles/glfw.dir/monitor.c.o modules/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o modules/glfw/src/CMakeFiles/glfw.dir/window.c.o modules/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o modules/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o modules/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o modules/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o modules/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o modules/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o modules/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o modules/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o modules/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = modules/glfw/src/CMakeFiles/glfw.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = modules/glfw/src/CMakeFiles/glfw.dir/glfw.pdb
+  TARGET_FILE = modules/glfw/src/libglfw3.a
+  TARGET_PDB = modules/glfw/src/libglfw3.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build modules/glfw/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build modules/glfw/src/edit_cache: phony modules/glfw/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build modules/glfw/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build modules/glfw/src/rebuild_cache: phony modules/glfw/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build modules/glfw/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build modules/glfw/src/CMakeFiles/install.util: CUSTOM_COMMAND modules/glfw/src/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build modules/glfw/src/install: phony modules/glfw/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build modules/glfw/src/CMakeFiles/install/local.util: CUSTOM_COMMAND modules/glfw/src/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build modules/glfw/src/install/local: phony modules/glfw/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build modules/glfw/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND modules/glfw/src/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/modules/glfw/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build modules/glfw/src/install/strip: phony modules/glfw/src/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for modules/glfw/src/CMakeFiles/update_mappings
+
+build modules/glfw/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}modules/glfw/src/CMakeFiles/update_mappings: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/modules/glfw/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/alex/Desktop/Atomic/modules/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+  DESC = Updating gamepad mappings from upstream repository
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alex/Desktop/Atomic/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Atomic
+
+
+#############################################
+# Order-only phony target for Atomic
+
+build cmake_object_order_depends_target_Atomic: phony || cmake_object_order_depends_target_glfw
+
+build Atomic/CMakeFiles/Atomic.dir/Atomic.c.o: C_COMPILER__Atomic_Debug /Users/alex/Desktop/Atomic/Atomic/Atomic.c || cmake_object_order_depends_target_Atomic
+  DEFINES = -DWGPU_TARGET=WGPU_TARGET_MACOS
+  DEP_FILE = Atomic/CMakeFiles/Atomic.dir/Atomic.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -x objective-c++ -Wno-error=address-of-temporary
+  INCLUDES = -I/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi -I/Users/alex/Desktop/Atomic/modules/glfw/include
+  OBJECT_DIR = Atomic/CMakeFiles/Atomic.dir
+  OBJECT_FILE_DIR = Atomic/CMakeFiles/Atomic.dir
+  TARGET_COMPILE_PDB = Atomic/CMakeFiles/Atomic.dir/
+  TARGET_PDB = Atomic/Atomic.pdb
+
+build Atomic/CMakeFiles/Atomic.dir/renderer/material.c.o: C_COMPILER__Atomic_Debug /Users/alex/Desktop/Atomic/Atomic/renderer/material.c || cmake_object_order_depends_target_Atomic
+  DEFINES = -DWGPU_TARGET=WGPU_TARGET_MACOS
+  DEP_FILE = Atomic/CMakeFiles/Atomic.dir/renderer/material.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -x objective-c++ -Wno-error=address-of-temporary
+  INCLUDES = -I/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi -I/Users/alex/Desktop/Atomic/modules/glfw/include
+  OBJECT_DIR = Atomic/CMakeFiles/Atomic.dir
+  OBJECT_FILE_DIR = Atomic/CMakeFiles/Atomic.dir/renderer
+  TARGET_COMPILE_PDB = Atomic/CMakeFiles/Atomic.dir/
+  TARGET_PDB = Atomic/Atomic.pdb
+
+build Atomic/CMakeFiles/Atomic.dir/renderer/renderer.c.o: C_COMPILER__Atomic_Debug /Users/alex/Desktop/Atomic/Atomic/renderer/renderer.c || cmake_object_order_depends_target_Atomic
+  DEFINES = -DWGPU_TARGET=WGPU_TARGET_MACOS
+  DEP_FILE = Atomic/CMakeFiles/Atomic.dir/renderer/renderer.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -x objective-c++ -Wno-error=address-of-temporary
+  INCLUDES = -I/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi -I/Users/alex/Desktop/Atomic/modules/glfw/include
+  OBJECT_DIR = Atomic/CMakeFiles/Atomic.dir
+  OBJECT_FILE_DIR = Atomic/CMakeFiles/Atomic.dir/renderer
+  TARGET_COMPILE_PDB = Atomic/CMakeFiles/Atomic.dir/
+  TARGET_PDB = Atomic/Atomic.pdb
+
+build Atomic/CMakeFiles/Atomic.dir/surface/surface.c.o: C_COMPILER__Atomic_Debug /Users/alex/Desktop/Atomic/Atomic/surface/surface.c || cmake_object_order_depends_target_Atomic
+  DEFINES = -DWGPU_TARGET=WGPU_TARGET_MACOS
+  DEP_FILE = Atomic/CMakeFiles/Atomic.dir/surface/surface.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -x objective-c++ -Wno-error=address-of-temporary
+  INCLUDES = -I/Users/alex/Desktop/Atomic/Atomic/../modules/wgpu/ffi -I/Users/alex/Desktop/Atomic/modules/glfw/include
+  OBJECT_DIR = Atomic/CMakeFiles/Atomic.dir
+  OBJECT_FILE_DIR = Atomic/CMakeFiles/Atomic.dir/surface
+  TARGET_COMPILE_PDB = Atomic/CMakeFiles/Atomic.dir/
+  TARGET_PDB = Atomic/Atomic.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Atomic
+
+
+#############################################
+# Link the executable Atomic/Atomic
+
+build Atomic/Atomic: C_EXECUTABLE_LINKER__Atomic_Debug Atomic/CMakeFiles/Atomic.dir/Atomic.c.o Atomic/CMakeFiles/Atomic.dir/renderer/material.c.o Atomic/CMakeFiles/Atomic.dir/renderer/renderer.c.o Atomic/CMakeFiles/Atomic.dir/surface/surface.c.o | modules/glfw/src/libglfw3.a modules/glfw/src/libglfw3.a ../Atomic/../modules/wgpu/target/debug/libwgpu_native.a || modules/glfw/src/libglfw3.a
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = modules/glfw/src/libglfw3.a  -framework  Cocoa  -framework  CoreVideo  -framework  IOKit  -framework  QuartzCore  -framework  Metal  modules/glfw/src/libglfw3.a  ../Atomic/../modules/wgpu/target/debug/libwgpu_native.a  -framework Cocoa  -framework IOKit  -framework CoreFoundation
+  OBJECT_DIR = Atomic/CMakeFiles/Atomic.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = Atomic/CMakeFiles/Atomic.dir/
+  TARGET_FILE = Atomic/Atomic
+  TARGET_PDB = Atomic/Atomic.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build Atomic/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/Atomic && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build Atomic/edit_cache: phony Atomic/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Atomic/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/Atomic && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/alex/Desktop/Atomic -B/Users/alex/Desktop/Atomic/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Atomic/rebuild_cache: phony Atomic/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Atomic/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Atomic/CMakeFiles/install.util: CUSTOM_COMMAND Atomic/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/Atomic && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Atomic/install: phony Atomic/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Atomic/CMakeFiles/install/local.util: CUSTOM_COMMAND Atomic/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/Atomic && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Atomic/install/local: phony Atomic/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Atomic/CMakeFiles/install/strip.util: CUSTOM_COMMAND Atomic/all
+  COMMAND = cd /Users/alex/Desktop/Atomic/build/Atomic && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Atomic/install/strip: phony Atomic/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Target aliases.
+
+build Atomic: phony Atomic/Atomic
+
+build glfw: phony modules/glfw/src/libglfw3.a
+
+build libglfw3.a: phony modules/glfw/src/libglfw3.a
+
+build uninstall: phony modules/glfw/uninstall
+
+build update_mappings: phony modules/glfw/src/update_mappings
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alex/Desktop/Atomic/build
+
+build all: phony UPDATE_SUBMODULES modules/glfw/all Atomic/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alex/Desktop/Atomic/build/Atomic
+
+build Atomic/all: phony Atomic/Atomic
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alex/Desktop/Atomic/build/modules/glfw
+
+build modules/glfw/all: phony modules/glfw/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alex/Desktop/Atomic/build/modules/glfw/src
+
+build modules/glfw/src/all: phony modules/glfw/src/libglfw3.a
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../Atomic/CMakeLists.txt ../CMakeLists.txt ../modules/glfw/CMakeLists.txt ../modules/glfw/cmake_uninstall.cmake.in ../modules/glfw/src/CMakeLists.txt ../modules/glfw/src/glfw3.pc.in ../modules/glfw/src/glfw3Config.cmake.in ../modules/glfw/src/glfw_config.h.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCCompilerABI.c /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCompilerIdDetection.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompilerId.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeFindBinUtils.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeNinjaFindMake.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeTestCCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeTestCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeTestCompilerCommon.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckIncludeFile.c.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindThreads.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Internal/FeatureTesting.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../Atomic/CMakeLists.txt ../CMakeLists.txt ../modules/glfw/CMakeLists.txt ../modules/glfw/cmake_uninstall.cmake.in ../modules/glfw/src/CMakeLists.txt ../modules/glfw/src/glfw3.pc.in ../modules/glfw/src/glfw3Config.cmake.in ../modules/glfw/src/glfw_config.h.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCCompilerABI.c /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCompilerIdDetection.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineCompilerId.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeFindBinUtils.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeNinjaFindMake.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeTestCCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeTestCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeTestCompilerCommon.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckIncludeFile.c.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindThreads.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Internal/FeatureTesting.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

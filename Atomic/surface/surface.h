@@ -55,4 +55,13 @@ typedef struct Surface_t* Surface;
 */
 void fini_surface(Surface* surface);
 
+/**
+ * Get the raw pointer of the surface.
+ * 
+ * @param surface The surface.
+ */
+void* surface_get_raw(Surface* surface);
+
+void surface_get_size(Surface* surface, uint32_t* width, uint32_t* height);
+
 #endif
