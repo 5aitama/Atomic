@@ -1,4 +1,0 @@
-Target dependency graph (2 targets)
-glfw in Atomic, no dependencies
-Atomic in Atomic, depends on:
-glfw in Atomic (explicit)
