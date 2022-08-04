@@ -174,5 +174,6 @@ void* surface_get_raw(Surface* surface) {
 }
 
 void surface_get_size(Surface* surface, uint32_t* width, uint32_t* height) {
-	glfwGetWindowSize((*surface)->window, (int*)width, (int*)height);
+	glfwGetFramebufferSize((*surface)->window, (int*)width, (int*)height);
+	// glfwGetWindowSize((*surface)->window, (int*)width, (int*)height);
 }

@@ -65,7 +65,10 @@ if(APPLE)
     target_compile_options(Atomic PUBLIC -x objective-c++)
 endif()
 
-target_compile_options(Atomic PUBLIC -Wno-error=address-of-temporary)
+target_compile_options(Atomic
+    PRIVATE -Wno-error=address-of-temporary 
+    PRIVATE -Wno-address-of-temporary
+)
 
 target_include_directories(Atomic PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/wgpu/ffi")
 target_link_libraries(Atomic 
