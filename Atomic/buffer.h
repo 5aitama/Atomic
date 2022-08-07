@@ -44,4 +44,14 @@ void buffer_init(Buffer* buffer, uint64_t size, BufferUsage usage);
 void buffer_init_with_data(Buffer* buffer, uint64_t buffer_size, void* data, uint64_t data_size, BufferUsage usage);
 void buffer_fini(Buffer* buffer);
 
+/**
+ * @brief Write data into a buffer.
+ * 
+ * @param buffer The buffer to write in
+ * @param offset The offset at where we write data
+ * @param data The data to copy
+ * @param size The size (in bytes) of the data to copy.
+ */
+void buffer_write(Buffer buffer, const uint64_t offset, const void* data, const size_t size);
+
 #endif

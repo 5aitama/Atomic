@@ -57,6 +57,10 @@ void buffer_map(Buffer buffer, BufferMapMode mode, size_t offset, size_t size) {
     // wgpuBufferMapAsync(buffer->buffer, (WGPUMapMode)mode, offset, size, wgpu_buffer_map_callback, );
 }
 
+void buffer_write(Buffer buffer, const uint64_t offset, const void* data, const size_t size) {
+    wgpuQueueWriteBuffer(context->queue, buffer->buffer, offset, data, size);
+}
+
 void buffer_fini(Buffer* buffer) {
     wgpuBufferDrop((*buffer)->buffer);
     free(*buffer);

@@ -4,11 +4,11 @@
 #include "context.h"
 #include "context_private.h"
 
-#include <math.h>
-#include <stdio.h>
-
 #include "buffer.h"
 #include "buffer_private.h"
+
+#include <math.h>
+#include <stdio.h>
 
 extern AtomicContext context;
 
@@ -105,21 +105,6 @@ void vertex_buffer_init(VertexBuffer* vertex_buffer, const uint64_t count, void*
         .attributes     = wgpu_vertex_attributes,
         .stepMode       = WGPUVertexStepMode_Vertex,
     };
-
-    // uint64_t buffer_align_mask  = WGPU_COPY_BUFFER_ALIGNMENT - 1;
-    // uint64_t buffer_padded_size = fmax((total_size + buffer_align_mask) & ~buffer_align_mask, WGPU_COPY_BUFFER_ALIGNMENT);
-
-    // WGPUBuffer vbuff = wgpuDeviceCreateBuffer(context->device, &(WGPUBufferDescriptor) {
-    //     .label              = NULL,
-    //     .mappedAtCreation   = 1,
-    //     .nextInChain        = NULL,
-    //     .size               = buffer_padded_size,
-    //     .usage              = WGPUBufferUsage_Vertex,
-    // });
-
-    // void* buffer_ptr = wgpuBufferGetMappedRange(vbuff, 0, buffer_padded_size);
-    // memcpy(buffer_ptr, data, total_size);
-    // wgpuBufferUnmap(vbuff);
 
     Buffer vbuff = NULL;
     buffer_init_with_data(&vbuff, total_size, data, total_size, BufferUsage_Vertex);
