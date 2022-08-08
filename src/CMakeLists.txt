@@ -3,6 +3,24 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
+# Fetch the submodules recursivly...
+add_custom_target(UPDATE_SUBMODULES ALL 
+	COMMAND git submodule update --init --recursive 
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu
+)
+
+# Compile the wgpu library...
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/dist)
+	add_custom_target(BUILD_WGPU ALL 
+		COMMAND make package 
+		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu
+	)
+endif()
+
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+
 # Store into S_FILES variable all .cpp file that was on the src folder
 file(GLOB_RECURSE S_FILES ${CMAKE_CURRENT_SOURCE_DIR}/**.c)
 # Store all .h files in the src folder into a variable named "H_FILES"
@@ -15,6 +33,10 @@ endif()
 # Add source to this project's executable.
 # add_executable (AtomicExe ${S_FILES} ${H_FILES} ${M_FILES})
 add_library(atomic ${S_FILES} ${H_FILES} ${M_FILES})
+
+if(NOT IOS AND NOT ANDROID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/glfw)
+endif()
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET atomic PROPERTY CXX_STANDARD 20)
