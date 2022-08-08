@@ -7,6 +7,9 @@
 #include "../../buffer.h"
 #include "../../buffer_private.h"
 
+#include "../../texture/texture_private.h"
+#include "../../texture/sampler_private.h"
+
 extern AtomicContext context;
 
 void uniform_group_init(UniformGroup* uniform_group, const UniformDescription* uniforms, const uint32_t count) {
@@ -16,12 +19,7 @@ void uniform_group_init(UniformGroup* uniform_group, const UniformDescription* u
     for (uint32_t i = 0; i < count; i++) {
         WGPUBindGroupLayoutEntry layout_entry = (WGPUBindGroupLayoutEntry) {
             .binding        = i,
-            .buffer         = (WGPUBufferBindingLayout) {
-                .hasDynamicOffset   = false,
-                .nextInChain        = NULL,
-                .type               = (WGPUBufferBindingType)uniforms[i].type,
-                // .minBindingSize     = uniforms[i].size,
-            },
+            .buffer         = NULL,
             .sampler        = NULL,
             .storageTexture = NULL,
             .texture        = NULL,
@@ -30,16 +28,44 @@ void uniform_group_init(UniformGroup* uniform_group, const UniformDescription* u
 
         WGPUBindGroupEntry entry = (WGPUBindGroupEntry) {
             .binding        = i,
-            .offset         = uniforms[i].offset,
-            
-            // This will align in power of two (https://sotrh.github.io/learn-wgpu/showcase/alignment/#alignment-of-vertex-and-index-buffers)
-            .size           = (uniforms[i].size + 8 - 1) & ~(8 - 1),
-
-            .buffer         = uniforms[i].buffer->buffer,
+            .offset         = 0,
+            .size           = 0,
+            .buffer         = NULL,
             .sampler        = NULL,
             .textureView    = NULL,
             .nextInChain    = NULL,
         };
+
+        if (uniforms[i].buffer != NULL) {
+            layout_entry.buffer = (WGPUBufferBindingLayout) {
+                .hasDynamicOffset   = false,
+                .nextInChain        = NULL,
+                .type               = (WGPUBufferBindingType)uniforms[i].type,
+            };
+
+            entry.buffer    = uniforms[i].buffer->buffer;
+            
+            // This will align in power of two (https://sotrh.github.io/learn-wgpu/showcase/alignment/#alignment-of-vertex-and-index-buffers)
+            entry.size      = (uniforms[i].size + 8 - 1) & ~(8 - 1);
+            entry.offset    = 0;
+
+        } else if (uniforms[i].texture != NULL) {
+            layout_entry.texture = (WGPUTextureBindingLayout) {
+                .multisampled   = false,
+                .nextInChain    = NULL,
+                .sampleType     = WGPUTextureSampleType_Float,
+                .viewDimension  = WGPUTextureViewDimension_2D,
+            };
+
+            entry.textureView = uniforms[i].texture->texture_view;
+        } else if (uniforms[i].sampler != NULL) {
+            layout_entry.sampler = (WGPUSamplerBindingLayout) {
+                .type = WGPUSamplerBindingType_Filtering,
+                .nextInChain = NULL,
+            };
+
+            entry.sampler = uniforms[i].sampler->sampler;
+        }
 
         layout_entries[i] = layout_entry;
         entries[i] = entry;

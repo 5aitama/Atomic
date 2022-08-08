@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 #include "../../buffer.h"
+#include "../../texture/texture.h"
+#include "../../texture/sampler.h"
 
 typedef struct UniformGroup_s*  UniformGroup;
 
@@ -33,6 +35,12 @@ typedef struct UniformDescription {
 
     /** The buffer where the uniform data is. */
     Buffer buffer;
+
+    /** The texture */
+    Texture2D texture;
+
+    /** A texture sampler */
+    Sampler sampler;
 } UniformDescription;
 
 /**
