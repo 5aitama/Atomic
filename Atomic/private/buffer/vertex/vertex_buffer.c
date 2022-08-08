@@ -1,11 +1,10 @@
-#include "vertex_buffer.h"
+#include "Atomic/vertex_buffer.h"
+#include "Atomic/context.h"
+#include "Atomic/buffer.h"
+
+#include "../buffer_private.h"
 #include "vertex_buffer_private.h"
-
-#include "context.h"
-#include "context_private.h"
-
-#include "buffer.h"
-#include "buffer_private.h"
+#include "../../context/context_private.h"
 
 #include <math.h>
 #include <stdio.h>

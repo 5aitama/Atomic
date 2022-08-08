@@ -1,10 +1,10 @@
-#include "render_pass.h"
-#include "context.h"
-#include "context_private.h"
-#include "render_pipeline_private.h"
-#include "vertex_buffer_private.h"
-#include "buffer_private.h"
-#include "buffer/uniform/uniform_private.h"
+#include "Atomic/render_pass.h"
+#include "Atomic/context.h"
+#include "../../context/context_private.h"
+#include "../pipeline/render_pipeline_private.h"
+#include "../../buffer/vertex/vertex_buffer_private.h"
+#include "../../buffer/buffer_private.h"
+#include "../../buffer/uniform/uniform_private.h"
 
 extern AtomicContext context;
 

@@ -2,9 +2,9 @@
 #define SAITAMA_ATOMIC_UNIFORM_H
 
 #include <stdlib.h>
-#include "../../buffer.h"
-#include "../../texture/texture.h"
-#include "../../texture/sampler.h"
+#include <Atomic/buffer.h>
+#include <Atomic/texture.h>
+#include <Atomic/sampler.h>
 
 typedef struct UniformGroup_s*  UniformGroup;
 

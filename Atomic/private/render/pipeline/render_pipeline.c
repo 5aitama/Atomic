@@ -1,14 +1,13 @@
-#include "render_pipeline.h"
+#include "Atomic/render_pipeline.h"
 #include "render_pipeline_private.h"
 
-#include "context.h"
-#include "context_private.h"
+#include "Atomic/context.h"
+#include "Atomic/uniform.h"
 
-#include "shader_private.h"
-#include "vertex_buffer_private.h"
-
-#include "buffer/uniform/uniform.h"
-#include "buffer/uniform/uniform_private.h"
+#include "../../shader/shader_private.h"
+#include "../../context/context_private.h"
+#include "../../buffer/uniform/uniform_private.h"
+#include "../../buffer/vertex/vertex_buffer_private.h"
 
 extern AtomicContext context;
 

@@ -1,8 +1,8 @@
-#include "texture.h"
+#include "Atomic/texture.h"
 #include "texture_private.h"
 
-#include "../context.h"
-#include "../context_private.h"
+#include "Atomic/context.h"
+#include "../context/context_private.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>

@@ -1,9 +1,9 @@
 #ifndef SAITAMA_ATOMIC_RENDER_PASS_H
 #define SAITAMA_ATOMIC_RENDER_PASS_H
 
-#include "render_pipeline.h"
-#include "vertex_buffer.h"
-#include "buffer/uniform/uniform.h"
+#include <Atomic/render_pipeline.h>
+#include <Atomic/vertex_buffer.h>
+#include <Atomic/uniform.h>
 
 #include <stdlib.h>
 

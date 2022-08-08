@@ -32,3 +32,4 @@ add_definitions(-DSHADER_FOLDER_PATH="${CMAKE_CURRENT_SOURCE_DIR}/shaders")
 
 # Include sub-projects.
 add_subdirectory ("Atomic")
+add_subdirectory ("samples")

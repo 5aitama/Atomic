@@ -2,7 +2,7 @@
 #define SAITAMA_ATOMIC_VERTEX_BUFFER_PRIVATE_H
 
 #include <wgpu.h>
-#include "buffer.h"
+#include "Atomic/buffer.h"
 
 typedef struct VertexBuffer_s {
     WGPUVertexAttribute*    attributes;

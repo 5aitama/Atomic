@@ -13,11 +13,12 @@ if(APPLE)
 endif()
 
 # Add source to this project's executable.
-add_executable (Atomic ${S_FILES} ${H_FILES} ${M_FILES})
+# add_executable (AtomicExe ${S_FILES} ${H_FILES} ${M_FILES})
+add_library(atomic ${S_FILES} ${H_FILES} ${M_FILES})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET Atomic PROPERTY CXX_STANDARD 20)
-  # set_property(TARGET Atomic PROPERTY C_STANDARD 99)
+  set_property(TARGET atomic PROPERTY CXX_STANDARD 20)
+  # set_property(TARGET atomic PROPERTY C_STANDARD 99)
 endif()
 
 if(APPLE)
@@ -62,19 +63,21 @@ if(NOT IOS AND NOT ANDROID)
 endif()
 
 if(APPLE)
-    target_compile_options(Atomic PUBLIC -x objective-c++)
+    target_compile_options(atomic PUBLIC -x objective-c++)
 endif()
 
-target_compile_options(Atomic
+target_compile_options(atomic
     PRIVATE -Wno-error=address-of-temporary 
     PRIVATE -Wno-address-of-temporary
 )
 
-target_include_directories(Atomic 
+target_include_directories(atomic 
     PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/wgpu/ffi"
     PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/stb"
+    PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/public"
 )
-target_link_libraries(Atomic 
+
+target_link_libraries(atomic 
     PRIVATE glfw
     PRIVATE "${SYSTEM_LIBS_PATH}"
     PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/wgpu/target/debug/${CMAKE_STATIC_LIBRARY_PREFIX}wgpu_native${CMAKE_STATIC_LIBRARY_SUFFIX}"
