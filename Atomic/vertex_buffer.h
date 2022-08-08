@@ -42,7 +42,7 @@ typedef struct BufferLayout {
 } BufferLayout;
 
 typedef struct VertexBuffer_s* VertexBuffer;
-  
+
 void vertex_buffer_init(VertexBuffer* vertex_buffer, const uint64_t count, void* data, const BufferLayout attributes);
 void vertex_buffer_fini(VertexBuffer* vertex_buffer);
 

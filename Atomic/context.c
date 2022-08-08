@@ -40,9 +40,9 @@ void atm_init(Surface surface) {
     wgpuSetLogLevel(WGPULogLevel_Warn);
 
     WGPUInstance wgpu_instance  = NULL;
-    WGPUAdapter wgpu_adapter    = NULL;
-    WGPUDevice wgpu_device      = NULL;
-    WGPUSurface wgpu_surface    = (WGPUSurface)surface_get_raw(&surface);
+    WGPUAdapter  wgpu_adapter   = NULL;
+    WGPUDevice   wgpu_device    = NULL;
+    WGPUSurface  wgpu_surface   = (WGPUSurface)surface_get_raw(&surface);
 
     wgpuInstanceRequestAdapter(wgpu_instance, &(WGPURequestAdapterOptions){
         .compatibleSurface      = wgpu_surface,
@@ -98,7 +98,7 @@ void atm_init(Surface surface) {
         .render_texture     = NULL,
         .queue              = wgpuDeviceGetQueue(wgpu_device),
         .unsubmited_command_buffers = NULL,
-        .unsubmited_command_buffers_count = 0, 
+        .unsubmited_command_buffers_count = 0,
     };
 }
 

@@ -4,6 +4,7 @@
 #include "render_pipeline_private.h"
 #include "vertex_buffer_private.h"
 #include "buffer_private.h"
+#include "buffer/uniform/uniform_private.h"
 
 extern AtomicContext context;
 
@@ -100,4 +101,31 @@ void render_pass_draw(
 
 void render_pass_set_vertex_buffer(RenderPass render_pass, VertexBuffer vertex_buffer) {
     wgpuRenderPassEncoderSetVertexBuffer(render_pass->render_pass_encoder, 0, vertex_buffer->buffer->buffer, 0, vertex_buffer->buffer->size);
+}
+
+void render_pass_set_uniform_groups(RenderPass render_pass, UniformGroup* uniform_groups, const uint32_t count) {
+    for (uint32_t i = 0; i < count; i++)
+        wgpuRenderPassEncoderSetBindGroup(render_pass->render_pass_encoder, i, uniform_groups[i]->bind_group, 0, NULL);
+}
+
+void render_pass_set_index_buffer(RenderPass render_pass, Buffer index_buffer, const IndexFormat format, const uint64_t offset, const uint64_t size) {
+    wgpuRenderPassEncoderSetIndexBuffer(render_pass->render_pass_encoder, index_buffer->buffer, (WGPUIndexFormat)format, offset, size);
+}
+
+void render_pass_draw_indexed(
+    RenderPass render_pass,
+    const uint32_t index_count,
+    const uint32_t instance_count,
+    const uint32_t first_index,
+    const uint32_t base_vertex,
+    const uint32_t first_instance
+) {
+    wgpuRenderPassEncoderDrawIndexed(
+        render_pass->render_pass_encoder, 
+        index_count, 
+        instance_count,
+        first_index, 
+        base_vertex, 
+        first_instance
+    );
 }

@@ -70,7 +70,10 @@ target_compile_options(Atomic
     PRIVATE -Wno-address-of-temporary
 )
 
-target_include_directories(Atomic PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/wgpu/ffi")
+target_include_directories(Atomic 
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/wgpu/ffi"
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/stb"
+)
 target_link_libraries(Atomic 
     PRIVATE glfw
     PRIVATE "${SYSTEM_LIBS_PATH}"

@@ -7,34 +7,21 @@
 #include "shader_private.h"
 #include "vertex_buffer_private.h"
 
+#include "buffer/uniform/uniform.h"
+#include "buffer/uniform/uniform_private.h"
+
 extern AtomicContext context;
 
-void render_pipeline_init(RenderPipeline* render_pipeline, Shader shader, VertexBuffer vertex_buffer) {
+void render_pipeline_init(RenderPipeline* render_pipeline, Shader shader, VertexBuffer vertex_buffer, const UniformGroup* uniform_groups, const uint32_t count) {
+    
+    WGPUBindGroupLayout* bind_group_layouts = (WGPUBindGroupLayout*)malloc(sizeof(WGPUBindGroupLayout) * count);
 
-    WGPUBindGroupLayoutEntry vertex_entry = (WGPUBindGroupLayoutEntry) {
-        .binding        = 0,
-        .buffer         = (WGPUBufferBindingLayout) {
-            .hasDynamicOffset   = false,
-            .nextInChain        = NULL,
-            .type               = WGPUBufferBindingType_Uniform,
-            .minBindingSize     = 0,
-        },
-        .sampler        = NULL,
-        .storageTexture = NULL,
-        .texture        = NULL,
-        .visibility     = WGPUShaderStage_Vertex,
-    };
-
-    WGPUBindGroupLayout wgpu_bind_group_layout = wgpuDeviceCreateBindGroupLayout(context->device, &(WGPUBindGroupLayoutDescriptor) {
-        .entries        = &vertex_entry,
-        .entryCount     = 1,
-        .nextInChain    = NULL,
-        .label          = NULL,
-    });
+    for (uint32_t i = 0; i < count; i++)
+        bind_group_layouts[i] = uniform_groups[i]->bind_group_layout;
 
     WGPUPipelineLayout wgpu_pipeline_layout = wgpuDeviceCreatePipelineLayout(context->device, &(WGPUPipelineLayoutDescriptor){
-        .bindGroupLayouts       = NULL,//&wgpu_bind_group_layout,
-        .bindGroupLayoutCount   = 0,
+        .bindGroupLayouts       = bind_group_layouts,
+        .bindGroupLayoutCount   = count,
         .label                  = NULL,
         .nextInChain            = NULL,
     });
@@ -51,8 +38,8 @@ void render_pipeline_init(RenderPipeline* render_pipeline, Shader shader, Vertex
         .primitive = (WGPUPrimitiveState){
             .topology           = WGPUPrimitiveTopology_TriangleList,
             .stripIndexFormat   = WGPUIndexFormat_Undefined,
-            .frontFace          = WGPUFrontFace_CCW,
-            .cullMode           = WGPUCullMode_None
+            .frontFace          = WGPUFrontFace_CW,
+            .cullMode           = WGPUCullMode_Back,
         },
         .multisample = (WGPUMultisampleState){ 
             .count = 1,
@@ -82,6 +69,8 @@ void render_pipeline_init(RenderPipeline* render_pipeline, Shader shader, Vertex
         },
         .depthStencil = NULL,
     });
+
+    free(vertex_buffer->attributes);
 
     *render_pipeline = (RenderPipeline)malloc(sizeof(RenderPipeline_s));
     *(*render_pipeline) = (RenderPipeline_s) {
