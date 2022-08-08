@@ -7,6 +7,6 @@
         "
     >Atomic</h2>
     <p style="
-        opacity: 0.5
+        opacity: 0.5;
         ">A Rust | C cross-platform game engine</p>
 </div>
