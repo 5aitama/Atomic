@@ -17,30 +17,29 @@ if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/dist)
 	)
 endif()
 
-set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+if(NOT IOS AND NOT ANDROID)
+    set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+    set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+    set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/glfw)
+endif()
 
 # Store into S_FILES variable all .cpp file that was on the src folder
-file(GLOB_RECURSE S_FILES ${CMAKE_CURRENT_SOURCE_DIR}/**.c)
+file(GLOB_RECURSE S_FILES ${CMAKE_CURRENT_SOURCE_DIR}/private/**.c)
 # Store all .h files in the src folder into a variable named "H_FILES"
-file(GLOB_RECURSE H_FILES ${CMAKE_CURRENT_SOURCE_DIR}/**.h)
+file(GLOB_RECURSE H_FILES ${CMAKE_CURRENT_SOURCE_DIR}/private/**.h)
 
 if(APPLE)
-    file(GLOB_RECURSE M_FILES ${CMAKE_CURRENT_SOURCE_DIR}/**.m)
+    file(GLOB_RECURSE M_FILES ${CMAKE_CURRENT_SOURCE_DIR}/private/**.m)
 endif()
 
 # Add source to this project's executable.
 # add_executable (AtomicExe ${S_FILES} ${H_FILES} ${M_FILES})
 add_library(atomic ${S_FILES} ${H_FILES} ${M_FILES})
 
-if(NOT IOS AND NOT ANDROID)
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/glfw)
-endif()
-
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET atomic PROPERTY CXX_STANDARD 20)
-  # set_property(TARGET atomic PROPERTY C_STANDARD 99)
+#   set_property(TARGET atomic PROPERTY CXX_STANDARD 20)
+#   set_property(TARGET atomic PROPERTY C_STANDARD 99)
 endif()
 
 if(APPLE)
@@ -94,14 +93,14 @@ target_compile_options(atomic
 )
 
 target_include_directories(atomic 
-    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/wgpu/ffi"
-    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/stb"
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/ffi"
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/modules/stb"
     PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/public"
 )
 
 target_link_libraries(atomic 
     PRIVATE glfw
     PRIVATE "${SYSTEM_LIBS_PATH}"
-    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../modules/wgpu/target/debug/${CMAKE_STATIC_LIBRARY_PREFIX}wgpu_native${CMAKE_STATIC_LIBRARY_SUFFIX}"
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/target/debug/${CMAKE_STATIC_LIBRARY_PREFIX}wgpu_native${CMAKE_STATIC_LIBRARY_SUFFIX}"
 )
 
