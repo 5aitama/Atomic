@@ -1,6 +1,7 @@
 #ifndef ATOMIC_SURFACE_H
 #define ATOMIC_SURFACE_H
-#include "../Atomic.h"
+
+#include "atomic.h"
 
 #if WGPU_DESKTOP
 	#include <GLFW/glfw3.h>

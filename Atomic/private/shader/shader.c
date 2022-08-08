@@ -1,8 +1,8 @@
-#include "shader.h"
+#include "Atomic/shader.h"
 #include "shader_private.h"
 
-#include "context.h"
-#include "context_private.h"
+#include "Atomic/context.h"
+#include "../context/context_private.h"
 
 #include <stdlib.h>
 #include <stdio.h>

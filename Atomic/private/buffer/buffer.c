@@ -1,8 +1,8 @@
-#include "buffer.h"
-#include "buffer_private.h"
+#include "Atomic/buffer.h"
+#include "Atomic/context.h"
 
-#include "context.h"
-#include "context_private.h"
+#include "buffer_private.h"
+#include "../context/context_private.h"
 
 #include <math.h>
 

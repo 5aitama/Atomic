@@ -3,9 +3,9 @@
 
 #include <stdlib.h>
 
-#include "shader.h"
-#include "vertex_buffer.h"
-#include "buffer/uniform/uniform.h"
+#include <Atomic/shader.h>
+#include <Atomic/vertex_buffer.h>
+#include <Atomic/uniform.h>
 
 typedef struct RenderPipeline_s* RenderPipeline;
 

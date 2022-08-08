@@ -1,7 +1,7 @@
 #ifndef SAITAMA_ATOMIC_CONTEXT_H
 #define SAITAMA_ATOMIC_CONTEXT_H
 
-#include "surface/surface.h"
+#include <Atomic/surface.h>
 
 /**
  * An opaque pointer that represent the

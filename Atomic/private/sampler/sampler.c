@@ -1,8 +1,8 @@
-#include "sampler.h"
+#include "Atomic/sampler.h"
 #include "sampler_private.h"
 
-#include "../context.h"
-#include "../context_private.h"
+#include "Atomic/context.h"
+#include "../context/context_private.h"
 
 extern AtomicContext context;
 

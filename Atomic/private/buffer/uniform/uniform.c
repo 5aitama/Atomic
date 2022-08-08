@@ -1,14 +1,12 @@
-#include "uniform.h"
+#include "Atomic/uniform.h"
+#include "Atomic/context.h"
+#include "Atomic/buffer.h"
+
 #include "uniform_private.h"
-
-#include "../../context.h"
-#include "../../context_private.h"
-
-#include "../../buffer.h"
-#include "../../buffer_private.h"
-
+#include "../buffer_private.h"
+#include "../../context/context_private.h"
 #include "../../texture/texture_private.h"
-#include "../../texture/sampler_private.h"
+#include "../../sampler/sampler_private.h"
 
 extern AtomicContext context;
 
