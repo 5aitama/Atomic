@@ -23,7 +23,7 @@ int main()
 	atm_init(s);
 
 	Texture2D texture2d = NULL;
-	texture2D_init(&texture2d, "/Users/alex/Desktop/Atomic/textures/test.jpg");
+	texture2D_init(&texture2d, TEXTURES_FOLDER_PATH "/test.jpg");
 	
 	Sampler sampler = NULL;
 	sampler_init(&sampler);
@@ -34,7 +34,7 @@ int main()
 
 	// Create and compile a shader
 	Shader shader;
-	shader_init(&shader, SHADER_FOLDER_PATH "/triangle.wgsl");
+	shader_init(&shader, SHADERS_FOLDER_PATH "/triangle.wgsl");
 
 	// Create the buffer that contains the mesh indices.
 	Buffer ibuff = NULL;
