@@ -1,6 +1,6 @@
 [submodule "modules/wgpu"]
-	path = modules/wgpu
+	path = src/modules/wgpu
 	url = https://github.com/gfx-rs/wgpu-native.git
 [submodule "modules/glfw"]
-	path = modules/glfw
+	path = src/modules/glfw
 	url = https://github.com/glfw/glfw.git
