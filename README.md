@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="200" src="res/icon/atomicLogoRound.png" />
+    <img width="200" src="res/icon/AtomicLogoRound.png" />
     <br /><br />
     <h2 style="
         text-transform: uppercase;
