@@ -44,7 +44,7 @@ size_t size_of_data_format(const DataFormat format) {
         case DataFormat_Sint32x2  : return sizeof(int32_t)  * 2;
         case DataFormat_Sint32x3  : return sizeof(int32_t)  * 3;
         case DataFormat_Sint32x4  : return sizeof(int32_t)  * 4;
-        default: return 0;
+        default: return WGPUVertexFormat_Undefined;
     }
 }
 
@@ -80,7 +80,7 @@ WGPUVertexFormat data_format_into_wgpu_vertex_format(const DataFormat format) {
         case DataFormat_Sint32x2   : return WGPUVertexFormat_Sint32x2  ;
         case DataFormat_Sint32x3   : return WGPUVertexFormat_Sint32x3  ;
         case DataFormat_Sint32x4   : return WGPUVertexFormat_Sint32x4  ;
-        default: return 0;
+        default: return WGPUVertexFormat_Undefined;
     }
 }
 
