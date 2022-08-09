@@ -2,6 +2,7 @@
 #define SAITAMA_ATOMIC_VERTEX_BUFFER_H
 
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef enum DataFormat {
     DataFormat_Uint8x2    = 0x00000001,

@@ -2,6 +2,7 @@
 #define SAITAMA_ATOMIC_UNIFORM_H
 
 #include <stdlib.h>
+#include <stdint.h>
 #include <Atomic/buffer.h>
 #include <Atomic/texture.h>
 #include <Atomic/sampler.h>

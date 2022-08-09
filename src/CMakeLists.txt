@@ -12,7 +12,7 @@ add_custom_target(UPDATE_SUBMODULES ALL
 # Compile the wgpu library...
 if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/dist)
 	add_custom_target(BUILD_WGPU ALL 
-		COMMAND make package 
+		COMMAND cargo build && cargo build --release
 		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu
 	)
 endif()
@@ -87,10 +87,12 @@ if(APPLE)
     target_compile_options(atomic PUBLIC -x objective-c++)
 endif()
 
-target_compile_options(atomic
-    PRIVATE -Wno-error=address-of-temporary 
-    PRIVATE -Wno-address-of-temporary
-)
+if(NOT MSVC)
+    target_compile_options(atomic
+        PRIVATE -Wno-error=address-of-temporary 
+        PRIVATE -Wno-address-of-temporary
+    )
+endif()
 
 target_include_directories(atomic 
     PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/ffi"

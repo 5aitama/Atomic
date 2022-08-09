@@ -2,6 +2,7 @@
 #define SAITAMA_ATOMIC_BUFFER_H
 
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef struct Buffer_s* Buffer;
 
