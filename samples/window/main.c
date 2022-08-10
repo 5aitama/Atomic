@@ -65,7 +65,7 @@ int main()
 				.type = PassType_RenderPass,
 				.func = (PassFunc)my_pass,
 			},
-		}, 3, NULL);
+		}, 1, NULL);
 
 		// Submit the pass encoder to the
 		// gpu for execution. Notice that
