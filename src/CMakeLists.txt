@@ -103,6 +103,6 @@ target_include_directories(atomic
 target_link_libraries(atomic 
     PRIVATE glfw
     PRIVATE "${SYSTEM_LIBS_PATH}"
-    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/target/debug/${CMAKE_STATIC_LIBRARY_PREFIX}wgpu_native${CMAKE_STATIC_LIBRARY_SUFFIX}"
+    PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/modules/wgpu/target/release/${CMAKE_STATIC_LIBRARY_PREFIX}wgpu_native${CMAKE_STATIC_LIBRARY_SUFFIX}"
 )
 

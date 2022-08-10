@@ -5,6 +5,7 @@
 #include "../../buffer/vertex/vertex_buffer_private.h"
 #include "../../buffer/buffer_private.h"
 #include "../../buffer/uniform/uniform_private.h"
+#include "render_pass.h"
 
 extern AtomicContext context;
 

@@ -1,7 +1,7 @@
 #ifndef ATOMIC_SURFACE_H
 #define ATOMIC_SURFACE_H
 
-#include "atomic.h"
+#include "../Platform.h"
 
 #if WGPU_DESKTOP
 	#include <GLFW/glfw3.h>
@@ -31,13 +31,7 @@ typedef struct Surface_t* Surface;
 	* @param height		- The window height.
 	* @param title		- The window title.
 	*/
-	int init_surface(Surface* surface, const uint32_t width, const uint32_t height, const char* title);
-
-	/**
-	* Get the pointer to the GLFWWindow of the surface.
-	* @param surface - The targeted surface.
-	*/
-	GLFWwindow* surface_get_glfw_window(Surface* surface);
+	int surface_init(Surface* surface, const uint32_t width, const uint32_t height, const char* title);
 
 #elif WGPU_TARGET == WGPU_TARGET_IOS
 	/**
@@ -46,7 +40,7 @@ typedef struct Surface_t* Surface;
 	* @param surface		- A pointer to the surface to initialize.
 	* @param metal_layer	- A pointer to the MTLLayer object.
 	*/
-	int init_surface(Surface* surface, void* metal_layer);
+	int surface_init(Surface* surface, void* metal_layer);
 #endif
 
 /**
@@ -54,15 +48,17 @@ typedef struct Surface_t* Surface;
 * 
 * @param surface - The surface to destroy.
 */
-void fini_surface(Surface* surface);
+void surface_fini(Surface* surface);
 
-/**
- * Get the raw pointer of the surface.
- * 
- * @param surface The surface.
- */
-void* surface_get_raw(Surface* surface);
+#if WGPU_DESKTOP
+	/**
+	 * @brief Check if the window should close.
+	 * 
+	 * @param surface The surface.
+	 */
+	int surface_window_should_close(Surface surface);
 
-void surface_get_size(Surface* surface, uint32_t* width, uint32_t* height);
+	float surface_window_get_time();
+#endif
 
 #endif

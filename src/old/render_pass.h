@@ -4,8 +4,21 @@
 #include <Atomic/render_pipeline.h>
 #include <Atomic/vertex_buffer.h>
 #include <Atomic/uniform.h>
+#include <Atomic/texture.h>
 
 #include <stdlib.h>
+
+typedef struct RenderPassClearColor {
+    float r, g, b, a;
+} RenderPassClearColor;
+
+typedef struct RenderPassDescriptor {
+    /** The clear color (can be `NULL`) */
+    const RenderPassClearColor* clearColor;
+    
+    /** The render texture target (`NULL` to render into the main render texture.) */
+    const Texture2D target;
+} RenderPassDescriptor;
 
 typedef struct RenderPass_s* RenderPass;
 typedef enum IndexFormat {

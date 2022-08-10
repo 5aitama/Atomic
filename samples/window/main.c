@@ -1,143 +1,87 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <Atomic/atomic.h>
-#include <Atomic/surface.h>
-#include <Atomic/context.h>
-#include <Atomic/render_pass.h>
-#include <Atomic/shader.h>
-#include <Atomic/render_pipeline.h>
-#include <Atomic/vertex_buffer.h>
-#include <Atomic/uniform.h>
-#include <Atomic/texture.h>
-#include <Atomic/sampler.h>
+#include <Atomic/Core/Renderer/Surface.h>
+#include <Atomic/Core/Renderer/Context.h>
+#include <Atomic/Core/Renderer/PassEncoder.h>
+#include <Atomic/Core/Renderer/RenderPass.h>
+
+void my_pass(RenderPass pass, void* user_data) {
+	render_pass_add_color_attachment(pass, 217.0 / 255.0, 217.0 / 255.0,  217.0 / 255.0, 1.0);
+	render_pass_begin(pass);
+	render_pass_end(pass);
+}
 
 int main()
-{
-	// Create a new surface.
-	Surface s = NULL;
-	if (init_surface(&s, 600, 600, "Hello world") == EXIT_FAILURE) 
-		return EXIT_FAILURE;
-	
-	// Initialize Atomic
-	atm_init(s);
+{	
+	// Create a new surface. Notice that this
+	// code only works on desktop platforms (
+	// Linux, Windows, macOS) for mobile you
+	// must pass a pointer to the native
+	// surface.
+	Surface surface = NULL;
+	surface_init(&surface, 800, 600, "Atomic Sample");
 
-	Texture2D texture2d = NULL;
-	texture2D_init(&texture2d, TEXTURES_FOLDER_PATH "/test.jpg");
-	
-	Sampler sampler = NULL;
-	sampler_init(&sampler);
+	// Initialize the renderer. This tell the
+	// renderer that all drawing operations
+	// will be on the surface created above.
+	renderer_init(surface);
 
-#if WGPU_DESKTOP
-	// Get the surface window (only for desktop platforms)
-	GLFWwindow* window = surface_get_glfw_window(&s);
+	float last_time = surface_window_get_time();
+	int fps = 0;
+	float acc = 0;
 
-	// Create and compile a shader
-	Shader shader;
-	shader_init(&shader, SHADERS_FOLDER_PATH "/triangle.wgsl");
+	while(!surface_window_should_close(surface)) {
+		float curr_time = surface_window_get_time();
+		float delta_time = curr_time - last_time;
+		last_time = curr_time;
 
-	// Create the buffer that contains the mesh indices.
-	Buffer ibuff = NULL;
-	buffer_init_with_data(&ibuff, sizeof(uint16_t) * 6, (uint16_t[]){
-		0, 1, 2,
-		0, 2, 3,
-	}, sizeof(uint16_t) * 6, BufferUsage_Index);
-
-	// Create the buffer that contains the mesh vertices.
-	VertexBuffer vbuff = NULL;
-	const float square_size = 1.f;
-	vertex_buffer_init(&vbuff, 4,
-		(float[]) {
-			-1.0f * square_size, -1.0f * square_size, 	1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
-			-1.0f * square_size,  1.0f * square_size, 	0.0f, 1.0f, 0.0f,	0.0f, 1.0f,
-			 1.0f * square_size,  1.0f * square_size,	0.0f, 0.0f, 1.0f,	1.0f, 1.0f,
-			 1.0f * square_size, -1.0f * square_size,	1.0f, 1.0f, 1.0f,	1.0f, 0.0f,
-		},
-		(BufferLayout) {
-			.layout = (const DataFormat[]) {
-				DataFormat_Float32x2,
-				DataFormat_Float32x3,
-				DataFormat_Float32x2,
-			},
-			.count = 3,
+		if (acc >= 1) {
+			printf("%i FPS\n", fps);
+			acc = 0;
+			fps = 0;
 		}
-	);
 
-	// Create a buffer that contains the uniforms data.
-	Buffer uniform_buffer = NULL;
-	buffer_init_with_data(&uniform_buffer, sizeof(float) * 4, (float[]){
-		1.0f, 0.0f, 0.0f, // The color
-		0.0f,			  // The time
-	}, sizeof(float) * 4, (BufferUsage)(BufferUsage_Uniform | BufferUsage_CopyDst));
+		acc += delta_time;
+		fps ++;
 
-	// Create a group of uniforms data.
-	UniformGroup uniform_group = NULL;
-	uniform_group_init(&uniform_group, (UniformDescription[]) {
-		(UniformDescription) {
-			.visibility = UniformVisibility_Fragment,
-			.type 		= UniformType_Uniform,
-			.size 		= sizeof(float) * 4,
-			.offset 	= 0,
-			.buffer 	= uniform_buffer,
-		},
+		// This will create a texture on wich
+		// the renderer can draw. This must be
+		// called at the begining of each frame
+		// or before any rendering operations.
+		renderer_aquire_texture();
 
-		(UniformDescription) {
-			.visibility = UniformVisibility_Fragment,
-			.type		= UniformType_Uniform,
-			.sampler	= sampler,
-		},
+		// Create a new pass encoder. We will
+		// record all things that we want to
+		// do on the gpu (like rendering and
+		// compute) in a PassEncoder.
+		PassEncoder encoder = NULL;
+		pass_encoder_init(&encoder);
 
-		(UniformDescription) {
-			.visibility = UniformVisibility_Fragment,
-			.type		= UniformType_Uniform,
-			.texture 	= texture2d,
-		},
-	}, 3);
+		// Encode our render pass into the
+		// pass encoder created above.
+		pass_encoder_encode_passes(encoder, (PassDescriptor[]) {
+			(PassDescriptor) {
+				.type = PassType_RenderPass,
+				.func = (PassFunc)my_pass,
+			},
+		}, 3, NULL);
 
-	// Create a render pipeline.
-	RenderPipeline render_pipeline;
-	render_pipeline_init(&render_pipeline, shader, vbuff, &uniform_group, 1);
+		// Submit the pass encoder to the
+		// gpu for execution. Notice that
+		// we can submit multiple pass 
+		// encoder per frame.
+		pass_encoder_submit(&encoder, 1);
+		pass_encoder_fini(&encoder);
 
-	// Create a render pass.
-	RenderPass render_pass = NULL;
-	render_pass_init(&render_pass);
-
-	// Our render loop...
-	while (!glfwWindowShouldClose(window)) {
-		float curr_time = (float)glfwGetTime();
-		atm_begin_render();
-
-		buffer_write(uniform_buffer, sizeof(float) * 3, (float[]){ curr_time * 2 }, sizeof(float));
-		render_pass_begin(render_pass);
-		
-		render_pass_set_pipeline(render_pass, render_pipeline);
-		render_pass_set_uniform_groups(render_pass, &uniform_group, 1);
-		render_pass_set_vertex_buffer(render_pass, vbuff);
-		render_pass_set_index_buffer(render_pass, ibuff, IndexFormat_uint16, 0, sizeof(uint16_t) * 6);
-		render_pass_draw_indexed(render_pass, 6, 1, 0, 0, 0);
-
-		render_pass_end(render_pass);
-
-		atm_end_render();
-		glfwPollEvents();
+		// Present the current texture
+		// into the surface.
+		renderer_present();
 	}
 
-	sampler_fini(&sampler);
-	texture2D_fini(&texture2d);
-	vertex_buffer_fini(&vbuff);
-	render_pass_fini(&render_pass);
-#endif
-	uniform_group_fini(&uniform_group);
-	buffer_fini(&uniform_buffer);
-	buffer_fini(&ibuff);
-	render_pipeline_fini(&render_pipeline);
-	shader_fini(&shader);
-
-	// Free Atomic
-	atm_fini();
-
-	// Free surface
-	fini_surface(&s);
+	// Release created structs.
+	renderer_fini();
+	surface_fini(&surface);
 
 	return EXIT_SUCCESS;
 }

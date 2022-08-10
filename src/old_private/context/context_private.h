@@ -2,7 +2,7 @@
 #define SAITAMA_ATOMIC_CONTEXT_PRIVATE_H
 
 #include <wgpu.h>
-
+#include <Atomic/surface.h>
 typedef struct AtomicContext_s {
     WGPUInstance instance;
     WGPUAdapter adapter;
